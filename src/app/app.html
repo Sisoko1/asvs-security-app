@@ -1,3 +1,140 @@
-<h1>OWASP ASVS Data</h1>
+<h1>OWASP ASVS Security Checklist</h1>
 
-<pre>{{ data | json }}</pre>
+<!-- Architecture -->
+<section *ngIf="data?.Architecture">
+  <h2>Architecture</h2>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>L1</th>
+        <th>L2</th>
+        <th>L3</th>
+        <th>Verification Requirement</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data.Architecture">
+        <td>{{ item['#'] }}</td>
+        <td>{{ item['Name'] }}</td>
+        <td>{{ item['Description'] }}</td>
+        <td>{{ item['L1'] }}</td>
+        <td>{{ item['L2'] }}</td>
+        <td>{{ item['L3'] }}</td>
+        <td>{{ item['Verification Requirement'] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Authentication -->
+<section *ngIf="data?.Authentication">
+  <h2>Authentication</h2>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>L1</th>
+        <th>L2</th>
+        <th>L3</th>
+        <th>Verification Requirement</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data.Authentication">
+        <td>{{ item['#'] }}</td>
+        <td>{{ item['Name'] }}</td>
+        <td>{{ item['Description'] }}</td>
+        <td>{{ item['L1'] }}</td>
+        <td>{{ item['L2'] }}</td>
+        <td>{{ item['L3'] }}</td>
+        <td>{{ item['Verification Requirement'] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Session Management -->
+<section *ngIf="data?.['Session Management']">
+  <h2>Session Management</h2>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>L1</th>
+        <th>L2</th>
+        <th>L3</th>
+        <th>Verification Requirement</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data['Session Management']">
+        <td>{{ item['#'] }}</td>
+        <td>{{ item['Name'] }}</td>
+        <td>{{ item['Description'] }}</td>
+        <td>{{ item['L1'] }}</td>
+        <td>{{ item['L2'] }}</td>
+        <td>{{ item['L3'] }}</td>
+        <td>{{ item['Verification Requirement'] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Configuration -->
+<section *ngIf="data?.Configuration?.length">
+  <h2>Configuration</h2>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>L1</th>
+        <th>L2</th>
+        <th>L3</th>
+        <th>Verification Requirement</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data.Configuration">
+        <td>{{ item['#'] }}</td>
+        <td>{{ item['Name'] }}</td>
+        <td>{{ item['Description'] }}</td>
+        <td>{{ item['L1'] }}</td>
+        <td>{{ item['L2'] }}</td>
+        <td>{{ item['L3'] }}</td>
+        <td>{{ item['Verification Requirement'] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ASVS Results -->
+<section *ngIf="data?.['ASVS Results']">
+  <h2>ASVS Results</h2>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Total</th>
+        <th>Valid</th>
+        <th>Validity Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data['ASVS Results']">
+        <td>{{ item['Category'] }}</td>
+        <td>{{ item['Total'] }}</td>
+        <td>{{ item['Valid'] }}</td>
+        <td>{{ item['Validity Percentage'] }}%</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
