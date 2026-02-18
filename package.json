@@ -1,6 +1,7 @@
 {
   "name": "asvs-security-app",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -36,7 +37,9 @@
     "@angular/build": "^21.0.3",
     "@angular/cli": "^21.0.3",
     "@angular/compiler-cli": "^21.0.0",
+    "@tailwindcss/postcss": "^4.1.18",
     "jsdom": "^27.1.0",
+    "postcss": "^8.5.6",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
   }
